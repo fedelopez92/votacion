@@ -1,0 +1,38 @@
+
+		<form name="FormRegistro" novalidate>
+
+		<p>
+			<input type="text" name="nombreuser" ng-model="usuario.nombreuser" placeholder="ingrese usuario" required>
+			<br/>
+			<span ng-show="FormRegistro.nombreuser.$error.required">El usuario es requerido</span>
+		</p>
+
+		<p>
+			<input type="number" name="dni" ng-model="usuario.dni" placeholder="ingrese DNI" required>
+			<br/>
+			<span ng-show="FormRegistro.dni.$error.required">El DNI es requerido</span>
+			<span ng-show="FormRegistro.dni.$error.number">Solo puede contener numeros</span>
+		</p>
+
+		<p>
+			<input type="password" name="password" ng-model="usuario.password" ng-minlength="7" placeholder="ingrese contrasena" required>
+			<br/>
+			<span ng-show="FormRegistro.password.$error.required">La contrasena es requerida</span>
+			<span ng-show="FormRegistro.password.$error.minlength">La contrasena debe tener como minimo 7 caracteres</span>
+		</p>
+
+		<p>
+			<input type="password" name="copiapassword" ng-model="usuario.copiapassword" ng-minlength="7" placeholder="reingrese contrasena" required>
+			<br/>
+			<span ng-show="FormRegistro.password.$error.required">La contrasena es requerida</span>
+			<span ng-show="FormRegistro.password.$error.minlength">La contrasena debe tener como minimo 7 caracteres</span>
+		</p>
+
+		<p>
+		  <a class="btn btn-info " ng-disabled="FormRegistro.$dirty && FormRegistro.$invalid && 
+		  FormRegistro.password.minlength != 7 && FormRegistro.password != FormRegistro.copiapassword" ng-click="Registrar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Registrarse</a>
+		</p>
+
+		</form>
+			
+		</div>

@@ -1,0 +1,24 @@
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+
+      <div class="masthead clearfix">
+        <div class="inner">
+          <h3 class="masthead-brand">Elecciones 2016</h3>
+          <nav>
+            <ul class="nav masthead-nav">
+              <li><a ui-sref="inicio()">Inicio</a></li>
+              <li><a ui-sref="usuario.login()">Login</a></li>
+              <li><a ui-sref="usuario.registro()">Registrarse</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      
+      <div ui-view name="contenido"></div> 
+      <!-- tiene que tener el mismo name que el nombre del view del state de app.js -->
+      </div>
+
+    </div>
+  </div> 
+</div>

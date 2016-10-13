@@ -1,0 +1,29 @@
+
+		<form name="FormVoto" method=post novalidate>
+
+		<p>
+			<input type="number" name="dni" ng-model="persona.dni" placeholder="ingrese DNI" required>
+			<br/>
+			<span ng-show="FormVoto.dni.$error.required">El DNI es requerido</span>
+			<span ng-show="FormVoto.dni.$error.number">Solo puede contener numeros</span>
+		</p>
+
+		<p>
+			<label>Sexo:</label><br>
+			<input type="radio" name="sexo" ng-model="persona.sexo" value="Masculino" required><label>Masculino</label> <br>
+			<input type="radio" name="sexo" ng-model="persona.sexo" value="Femenino" required> <label>Femenino</label>
+			<br>
+			<span ng-show="FormVoto.sexo.$error.required">El sexo es requerido</span>
+		</p>
+
+		<p>
+			<input type="text" name="partidoPolitico" ng-model="persona.partidopolitico" placeholder="ingrese partido politico" required>
+			<br/>
+			<span ng-show="FormVoto.partidoPolitico.$error.required">El nombre es requerido</span>
+		</p>
+
+		<p>
+		  <a class="btn btn-info " ng-disabled="FormVoto.$dirty && FormVoto.$invalid" ng-click="Registrar()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Votar</a>
+		</p>
+
+		</form>

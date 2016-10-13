@@ -1,0 +1,41 @@
+
+		           <div class="divScroll">
+					<div class="CajaInicio animated bounceInRight">
+							<h1>Listado de personas</h1>
+							<input type="search" ng-model="buscador" placeholder="Buscar persona">		
+							<!-- id="listaPersonas" -->
+								
+								<table class='table table-hover table-responsive' id="listaPersonas">
+									<thead>
+										<tr>
+															
+											<th>  DNI              </th>
+											<th>  Sexo             </th>
+											<th>  Fecha de votacion    </th>
+											<th>  Partido politico  </th>
+											<th>  BORRAR           </th>
+											<th>  MODIFICAR        </th>
+										</tr> 
+									</thead>
+									
+									<tr ng-repeat="persona in ListadoPersonas | filter:buscador as resultado">
+
+										<!-- <td><img  class='fotoGrilla' ng-src="persona.avatar" /></td> -->
+							
+										<td>{{persona.dni}}</td>
+										<td>{{persona.sexo}}</td>
+										<td>{{persona.fechavotacion | date:'medium'}}</td>
+										<td>{{persona.partidopolitico}}</td>
+
+										<td><button class='btn btn-danger' name='Borrar' ng-click="Borrar(persona)">   <span class='glyphicon glyphicon-remove-circle'>&nbsp;</span>Borrar</button></td>
+										
+										<td><button class='btn btn-warning' name='Modificar' ui-sref="persona.modificacion({id:persona.id, dni:persona.dni, sexo:persona.sexo, fechavotacion:persona.fechavotacion, partidopolitico:persona.partidopolitico, foto:persona.foto})"><span class='glyphicon glyphicon-edit'>&nbsp;</span>Modificar</button></td>
+															
+									</tr>
+									
+								</table>
+								<div ng-if="resultado.length==0">
+									No hay personas con ese critero.
+								</div>
+							</div>
+						</div>

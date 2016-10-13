@@ -1,0 +1,32 @@
+
+		<form name="FormLogin" novalidate>
+
+		<p>
+			<input type="text" name="nombreuser" ng-model="usuario.nombreuser" placeholder="ingrese usuario" required>
+			<br/>
+			<span ng-show="FormLogin.nombreuser.$error.required">El usuario es requerido</span>
+		</p>
+
+		<p>
+			<input type="number" name="dni" ng-model="usuario.dni" placeholder="ingrese DNI" required>
+			<br/>
+			<span ng-show="FormLogin.dni.$error.required">El DNI es requerido</span>
+			<span ng-show="FormLogin.dni.$error.number">Solo puede contener numeros</span>
+		</p>
+
+
+		<p>
+			<input type="password" name="password" ng-model="usuario.password" ng-minlength="7" placeholder="ingrese contrasena" required>
+			<br/>
+			<span ng-show="FormLogin.password.$error.required">La contrasena es requerida</span>
+			<span ng-show="FormLogin.password.$error.minlength">La contrasena debe tener como minimo 7 caracteres</span>
+		</p>
+
+
+		<p>
+		  <a class="btn btn-info " ng-disabled="FormLogin.$dirty && FormLogin.$invalid && FormLogin.password.minlength != 7" ng-click="Login()" ><span class="glyphicon glyphicon-save">&nbsp;</span>Ingresar</a>
+		</p>
+
+		</form>
+			
+		</div>
